@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Haven Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+    <img src="images/logo.png" alt="Logo">
+
+    <div class="logo-text">
+        <h1 class="hotel-name">Spice Haven</h1>
+        <p class="tagline">Taste • Quality • Happiness</p>
+    </div>
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#menu">Menu</a></li>
+
+<li><a href="#cart">Cart</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<button id="bookTableBtn" class="btn">
+Book Table
+</button>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section id="about" class="about">
+
+<div class="about-image">
+
+<img src="images/about.jpg" alt="Restaurant">
+
+</div>
+
+<div class="about-content">
+
+<h2>About Our Restaurant</h2>
+
+<p>
+
+At Spice Haven Restaurant we believe food is more than a meal—
+it's an experience.
+
+Our chefs prepare every dish using fresh ingredients and authentic recipes.
+
+Whether you're dining with family or celebrating a special occasion,
+we promise excellent service and unforgettable taste.
+
+</p>
+
+<div class="about-box">
+
+<div class="box">
+
+<h3>80+</h3>
+
+<p>Delicious Dishes</p>
+
+<p>Years Experience</p>
+
+</div>
+
+<div class="box">
+
+<h3>50+</h3>
+
+<p>Food Items</p>
+
+</div>
+
+<div class="box">
+
+<h3>25K+</h3>
+
+<p>Happy Customers</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= MENU SECTION ================= -->
+
+<section id="menu" class="menu">
+
+<h2 class="section-title">
+Our Special Menu
+</h2>
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Search Food..."
+onkeyup="searchFood()">
+
+</div>
+
+<div class="menu-container">
+
+<!-- Pizza -->
+
+<div class="menu-card">
+    <button class="fav-btn"
+onclick="toggleFavourite(this)">
+🤍
+</button>
+
+<img src="images/pizza.jpg" alt="Pizza">
+
+<h3>Margherita Pizza</h3>
+
+<p>Cheesy pizza with fresh vegetables.</p>
+
+<h4>₹299</h4>
+
+<div class="quantity">
+
+<button onclick="decreaseQty(0)">−</button>
+
+<span id="qty0">1</span>
+
+<button onclick="increaseQty(0)">+</button>
+
+</div>
+
+<button class="order-btn"
+onclick="addToCart('Margherita Pizza',299,0)">
+Add To Cart
+</button>
+
+</div>
+
+
+<!-- Burger -->
+
+<div class="menu-card">
+
+<img src="images/burger.jpg" alt="Burger">
+
+<h3>Veg Burger</h3>
+
+<p>Crispy burger with cheese.</p>
+
+<h4>₹199</h4>
+
+<div class="quantity">
+
+<button onclick="decreaseQty(1)">−</button>
+
+<span id="qty1">1</span>
+
+<button onclick="increaseQty(1)">+</button>
+
+</div>
+
+<button class="order-btn"
+onclick="addToCart('Veg Burger',199,1)">
+Add To Cart
+</button>
+
+</div>
+
+
+<!-- Pasta -->
+
+<div class="menu-card">
+
+<img src="images/pasta.jpg" alt="Pasta">
+
+<h3>White Sauce Pasta</h3>
+
+<p>Creamy pasta with cheese.</p>
+
+<h4>₹249</h4>
+
+<div class="quantity">
+
+<button onclick="decreaseQty(2)">−</button>
+
+<span id="qty2">1</span>
+
+<button onclick="increaseQty(2)">+</button>
+
+</div>
+
+<button class="order-btn"
+onclick="addToCart('White Sauce Pasta',249,2)">
+Add To Cart
+</button>
+
+</div>
+
+
+<!-- Brownie -->
+
+<div class="menu-card">
+
+<img src="images/brownie.jpg" alt="Brownie">
+
+<h3>Chocolate Brownie</h3>
+
+<p>Rich chocolate brownie.</p>
+
+<h4>₹149</h4>
+
+<div class="quantity">
+
+<button onclick="decreaseQty(3)">−</button>
+
+<span id="qty3">1</span>
+
+<button onclick="increaseQty(3)">+</button>
+
+</div>
+
+<button class="order-btn"
+onclick="addToCart('Chocolate Brownie',149,3)">
+Add To Cart
+</button>
+
+</div>
+
+
+<!-- Ice Cream -->
+
+<div class="menu-card">
+
+<img src="images/icecream.jpg" alt="Ice Cream">
+
+<h3>Vanilla Ice Cream</h3>
+
+<p>Fresh creamy vanilla ice cream.</p>
+
+<h4>₹99</h4>
+
+<div class="quantity">
+
+<button onclick="decreaseQty(4)">−</button>
+
+<span id="qty4">1</span>
+
+<button onclick="increaseQty(4)">+</button>
+
+</div>
+
+<button class="order-btn"
+onclick="addToCart('Vanilla Ice Cream',99,4)">
+Add To Cart
+</button>
+
+</div>
+
+
+<!-- Drink -->
+
+<div class="menu-card">
+
+<img src="images/drink.jpg" alt="Drink">
+
+<h3>Fresh Lime Soda</h3>
+
+<p>Refreshing chilled drink.</p>
+
+<h4>₹79</h4>
+
+<div class="quantity">
+
+<button onclick="decreaseQty(5)">−</button>
+
+<span id="qty5">1</span>
+
+<button onclick="increaseQty(5)">+</button>
+
+</div>
+
+<button class="order-btn"
+onclick="addToCart('Fresh Lime Soda',79,5)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= CART SECTION ================= -->
+
+<section id="cart" class="cart">
+
+<h2 class="section-title">Your Cart</h2>
+
+<div class="cart-container">
+
+<table id="cartTable">
+
+<thead>
+
+<tr>
+
+<th>Food Item</th>
+
+<th>Price</th>
+
+<th>Qty</th>
+
+<th>Total</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="cartBody">
+
+<!-- Items will appear here -->
+
+</tbody>
+
+</table>
+
+<div class="bill-box">
+
+<h3>Bill Summary</h3>
+
+<hr>
+
+<p>
+Subtotal :
+<span id="subtotal">₹0</span>
+</p>
+
+<p>
+GST (5%) :
+<span id="gst">₹0</span>
+</p>
+
+<div class="coupon">
+
+<input
+type="text"
+id="couponCode"
+placeholder="Enter Coupon">
+
+<button onclick="applyCoupon()">
+Apply
+</button>
+
+</div>
+
+<p>
+
+Discount :
+
+<span id="discount">
+
+₹0
+
+</span>
+
+</p>
+
+<hr>
+
+<h2>
+
+Grand Total :
+
+<span id="grandTotal">
+
+₹0
+
+</span>
+
+</h2>
+
+<div class="payment">
+
+<h3>
+
+Payment Method
+
+</h3>
+
+<label>
+
+<input
+type="radio"
+name="payment"
+value="Cash"
+checked>
+
+Cash
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="payment"
+value="UPI">
+
+UPI
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="payment"
+value="Card">
+
+Card
+
+</label>
+
+</div>
+
+<button
+class="pay-btn"
+onclick="payNow()">
+
+Pay Now
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAYMENT SUCCESS POPUP ================= -->
+
+<div
+id="paymentPopup"
+class="popup">
+
+<div class="popup-content">
+
+<h1>
+
+🎉 Payment Successful
+
+</h1>
+
+<p>
+
+Thank you for ordering from
+
+<b>Spice Haven Restaurant</b>
+
+</p>
+
+<h2>
+
+Order Confirmed ✅
+
+</h2>
+
+<p>
+
+Estimated Delivery
+
+<strong>
+
+25 Minutes
+
+</strong>
+
+</p>
+
+<button
+onclick="closePayment()">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="gallery">
+
+<h2 class="section-title">Food Gallery</h2>
+
+<div class="gallery-container">
+
+<img src="images/gallery1.jpg" alt="Gallery">
+<img src="images/gallery2.jpg" alt="Gallery">
+<img src="images/gallery3.jpg" alt="Gallery">
+<img src="images/gallery4.jpg" alt="Gallery">
+<img src="images/gallery5.jpg" alt="Gallery">
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews" class="reviews">
+
+<h2 class="section-title">
+
+Customer Reviews
+
+</h2>
+
+<div class="review-container">
+
+<div class="review-card">
+
+<h3>Rahul Sharma</h3>
+
+<p class="stars">⭐⭐⭐⭐⭐</p>
+
+<p>
+
+Amazing food and quick service.
+
+Loved the pizza and brownie.
+
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>Priya Patil</h3>
+
+<p class="stars">⭐⭐⭐⭐⭐</p>
+
+<p>
+
+Beautiful ambience and delicious desserts.
+
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>Amit Joshi</h3>
+
+<p class="stars">⭐⭐⭐⭐☆</p>
+
+<p>
+
+Fresh food and friendly staff.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- Add Review -->
+
+<div class="review-form">
+
+<h3>Write Your Review</h3>
+
+<input
+type="text"
+id="reviewName"
+placeholder="Your Name">
+
+<textarea
+id="reviewText"
+placeholder="Write your review"></textarea>
+
+<div class="rating">
+
+<span onclick="setRating(1)">⭐</span>
+
+<span onclick="setRating(2)">⭐</span>
+
+<span onclick="setRating(3)">⭐</span>
+
+<span onclick="setRating(4)">⭐</span>
+
+<span onclick="setRating(5)">⭐</span>
+
+</div>
+
+<button onclick="submitReview()">
+
+Submit Review
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">
+
+Contact Us
+
+</h2>
+
+<form id="contactForm">
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Email"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required>
+
+<textarea
+placeholder="Message"
+required></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</section>
+
+
+
+<!-- ================= BOOK TABLE POPUP ================= -->
+
+<div id="bookingPopup" class="popup">
+
+<div class="popup-content">
+
+<h2>
+
+🍽 Book Your Table
+
+</h2>
+
+<input
+type="text"
+id="customerName"
+placeholder="Customer Name">
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="Phone Number">
+
+<input
+type="number"
+id="guestCount"
+placeholder="Number of Guests">
+
+<input
+type="date"
+id="bookingDate">
+
+<input
+type="time"
+id="bookingTime">
+
+<button onclick="confirmBooking()">
+
+Confirm Booking
+
+</button>
+
+<button onclick="closeBooking()">
+
+Cancel
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>Spice Haven Restaurant</h2>
+
+<p>
+
+📍 Pune, Maharashtra
+
+</p>
+
+<p>
+
+📞 +91 9876543210
+
+</p>
+
+<p>
+
+✉ spicehaven@gmail.com
+
+</p>
+
+<p>
+
+Open Daily : 10:00 AM - 11:00 PM
+
+</p>
+
+<hr>
+
+<p>
+
+© 2026 Spice Haven Restaurant.
+
+All Rights Reserved.
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
